@@ -2,68 +2,70 @@
 
 ## Overview
 
-ArogyaNet AI is a simple AI-based telehealth system designed for rural
-areas. It helps patients report symptoms and receive basic health risk
-analysis. The system supports both text and voice input and can work
-even when internet connectivity is weak.
+ArogyaNet AI is an intelligent, offline-capable telehealth and resource triage platform built to bridge healthcare delivery gaps in rural and underserved communities. It empowers local clinics and patients to report symptoms via text or regional voice input, evaluate clinical risk levels instantly, generate printable OP consultation tickets, and coordinate emergency hospital resource allocation.
 
 ## Problem Statement
 
-Many rural areas do not have easy access to doctors or hospitals.
-Because of this, diseases are often detected late and patients cannot
-monitor their health regularly. ArogyaNet AI helps provide early health
-support and better communication with healthcare providers.
+Many rural communities face severe healthcare accessibility barriers due to acute doctor shortages, delayed disease detection, and weak or intermittent internet connectivity. Furthermore, central district hospitals often struggle to track real-time resource demands from peripheral primary health centers, leading to delayed medical intervention and inefficient emergency dispatch.
 
 ## Core Objectives
 
--   Collect patient symptoms and basic health data
--   Predict possible health risks using AI
--   Classify cases as Emergency, Urgent, or Routine
--   Allow voice-based symptom reporting
--   Store patient data safely
--   Support healthcare services even in offline conditions
+* Collect patient vitals, symptoms, and medical history with dynamic priority routing
+* Predict potential health risks and categorize clinical severity into Emergency, Urgent, or Routine
+* Enable multilingual, voice-based symptom reporting for low-literacy accessibility
+* Issue formatted, thermal-printable digital OP e-tickets and consultation summaries
+* Optimize hospital fleet logistics and resource distribution (ventilators, ambulances, specialists)
+* Maintain resilient local operation with automatic cloud synchronization when connected
 
 ## Offline Data Architecture
 
-The system follows an offline-first approach.\
-When a patient enters or speaks symptoms, the data is saved locally on
-the device.\
-If the internet is unavailable, the data stays stored on the device.\
-Once the internet connection returns, the data automatically syncs with
-the server.
+The platform operates on a robust offline-first methodology:
+When a patient logs symptoms via form or voice input, records are stored immediately within the local SQLite database.
+If internet connectivity drops, core triage analysis, registration, and slip generation continue without interruption.
+Once an active internet connection is re-established, local consultation records synchronize seamlessly with district hospital servers.
 
 ## Technology Stack
 
-Frontend: React / Flutter\
-Backend: Python (FastAPI / Flask)\
-AI & ML: Scikit-learn, TensorFlow\
-Voice Processing: Sarvam AI\
-Database: MongoDB / Firebase\
-Local Storage: SQLite\
-Security: AES Encryption and JWT Authentication
+Frontend: HTML5, Modern CSS3 (Grid & Flexbox), Vanilla JavaScript
+
+Backend: Python (Flask)
+
+AI & ML: Scikit-learn, Pandas, NumPy
+
+Voice Processing: Sarvam AI Voice APIs, Web Audio APIs
+
+Database: SQLite
+
+Authentication & Security: Session Authentication, Secure Password Hashing, Environment-based Secret Isolation
+
+Version Control: Git, GitHub
 
 ## AI Models Used
 
--   Logistic Regression for health risk prediction
--   Random Forest for disease classification
--   Natural Language Processing (NLP) for symptom analysis
+* Logistic Regression for baseline health risk evaluation
+* Random Forest for symptom-driven condition and department classification
+* Natural Language Processing (NLP) for multilingual clinical speech and symptom transcription
 
 ## User Interface Components
 
-Patient Dashboard -- enter symptoms and view health status\
-Voice Assistant -- speak symptoms in local language\
-Doctor Dashboard -- monitor patient risk levels\
-Hospital Panel -- manage emergency cases and resources
+Central Analytics Dashboard -- track total patient visits, active resource shortages, and emergency alerts
+
+Rural OP Kiosk -- intuitive patient self-registration and multilingual symptom intake interface
+
+Fleet & Resource Control -- dual-column dispatcher tracking critical regional hospital shortages and deploying emergency fleet units
+
+Printable OP Slips -- clean thermal-formatted print views for tangible patient token records
 
 ## Voice Support
 
-The system allows patients to report symptoms using voice. Speech is
-converted to text using Sarvam AI and then analyzed by the AI model to
-detect possible health risks.
+The platform integrates regional voice recognition using Sarvam AI. Patients can speak their symptoms naturally in their local language; the speech is converted into normalized medical text and analyzed by predictive models to determine triage urgency and clinical department routing.
+
+## Author
+
+V. Laxmi Narasimha Reddy
+
+GitHub: [https://github.com/Anjureddy99](https://www.google.com/search?q=https://github.com/Anjureddy99)
 
 ## Conclusion
 
-ArogyaNet AI helps improve healthcare access in rural areas by combining
-AI prediction, voice support, and offline functionality. It enables
-early detection of health risks and better communication between
-patients and healthcare providers.
+ArogyaNet AI enhances rural healthcare infrastructure by uniting AI diagnostic triage, multilingual speech interfaces, and district resource optimization into an offline-resilient solution. It streamlines primary outpatient care, cuts emergency response latency, and ensures healthcare remains accessible to every community.
